@@ -65,15 +65,16 @@ a {
   text-transform: uppercase;
 }
 
+.brand-logo {
+  display: block;
+  height: 204px;
+  width: auto;
+  max-width: 900px;
+  object-fit: contain;
+}
+
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: var(--bg);
-  font-weight: 900;
+  display: none;
 }
 
 .nav-links {
@@ -603,10 +604,23 @@ footer {
   .sc-track {
     grid-template-columns: 1fr 1fr;
   }
+
+  .sc-slide {
+    min-height: 100%;
+  }
 }
 
 @media (max-width: 560px) {
   .sc-track {
     grid-template-columns: 1fr;
+  }
+
+  .sc-controls {
+    flex-wrap: wrap;
+  }
+
+  .sc-btn {
+    width: 2.4rem;
+    height: 2.4rem;
   }
 }
