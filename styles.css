@@ -117,6 +117,11 @@ main {
   flex: 1;
 }
 
+.container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
 section {
   max-width: 1160px;
   margin: 0 auto;
@@ -364,6 +369,7 @@ form {
 }
 
 input,
+select,
 textarea {
   width: 100%;
   padding: 0.9rem 1rem;
@@ -374,13 +380,110 @@ textarea {
 }
 
 input::placeholder,
+select::placeholder,
 textarea::placeholder {
   color: #7d90ad;
+}
+
+select {
+  appearance: none;
 }
 
 textarea {
   min-height: 7.8rem;
   resize: vertical;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-info,
+.form-panel {
+  padding: 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, rgba(17, 28, 49, 0.95), rgba(8, 16, 29, 0.92));
+  box-shadow: var(--shadow);
+}
+
+.contact-info h2 {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+}
+
+.contact-info p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contact-items {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.35rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-item-icon {
+  display: grid;
+  place-items: center;
+  width: 2.45rem;
+  height: 2.45rem;
+  flex-shrink: 0;
+  border-radius: 0.9rem;
+  background: rgba(89, 216, 208, 0.14);
+  color: var(--accent-2);
+  font-size: 1rem;
+}
+
+.contact-label {
+  margin-bottom: 0.22rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.contact-item a,
+.contact-item span {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.form-panel {
+  padding-top: 1.4rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.form-grid label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 
 footer {
@@ -455,11 +558,19 @@ footer {
   .info-grid {
     grid-template-columns: 1fr;
   }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
   .menu-toggle {
     display: inline-flex;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 
   .footer-shell {
