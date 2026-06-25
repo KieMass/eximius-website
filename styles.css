@@ -385,10 +385,51 @@ textarea {
 
 footer {
   padding: 1.4rem 1.5rem 2rem;
-  text-align: center;
   color: var(--muted);
   border-top: 1px solid var(--border);
   margin-top: 2rem;
+}
+
+.footer-shell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footer-desc {
+  margin: 0;
+  max-width: 320px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.footer-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--text);
+}
+
+.footer-links-group a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.footer-links-group a:hover {
+  color: var(--accent-2);
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .reveal {
@@ -419,6 +460,11 @@ footer {
 @media (max-width: 720px) {
   .menu-toggle {
     display: inline-flex;
+  }
+
+  .footer-shell {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nav-links {
@@ -459,6 +505,53 @@ footer {
     padding-top: 2rem;
   }
 }
+.value-card {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(17, 28, 49, 0.96), rgba(8, 16, 29, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.service-card {
+  position: relative;
+}
+
+.service-card-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.service-card-bg {
+  position: absolute;
+  right: -0.7rem;
+  bottom: -0.9rem;
+  z-index: 0;
+  font-size: 7.5rem;
+  line-height: 1;
+  opacity: 0.07;
+  pointer-events: none;
+  transform: rotate(-8deg);
+}
+
+.service-card-bg-blue {
+  color: var(--accent-2);
+}
+
+.service-card-bg-gold {
+  color: var(--accent);
+}
+
+.service-card-bg span {
+  display: block;
+}
+
 /* ── Service Image Carousel ─────────────────────────────── */
 .service-carousel {
   padding-top: 0;
