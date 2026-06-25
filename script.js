@@ -1,20 +1,13 @@
-/* ============================================================
-   EXIMIUS SERVICES — Main Script
-   ============================================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ── Navbar: scroll shadow ─────────────────────────────── */
   const navbar = document.querySelector('.navbar');
-  if (navbar) {
-    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 30);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // initial check
-  }
-
-  /* ── Mobile menu toggle ─────────────────────────────────── */
   const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks   = document.querySelector('.nav-links');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
 
   if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
@@ -22,124 +15,109 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Close menu when a link is clicked
-    navLinks.querySelectorAll('.nav-link, .nav-cta').forEach((link) => {
+    navLinks.querySelectorAll('.nav-link').forEach((link) => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target)) {
-        navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
   }
 
-  /* ── Hero Slider ────────────────────────────────────────── */
-  const slides  = Array.from(document.querySelectorAll('.slider-track .slide'));
-  const dots    = Array.from(document.querySelectorAll('.slider-dots .dot'));
-  const counter = document.getElementById('slider-counter');
+  const slides = Array.from(document.querySelectorAll('.hero-slider .slide'));
+  const dots = Array.from(document.querySelectorAll('.hero-slider .dot'));
 
   if (slides.length && dots.length) {
     let currentIndex = 0;
-    let autoplayTimer = null;
 
     const showSlide = (index) => {
-      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-      dots.forEach((dot, i)   => dot.classList.toggle('active', i === index));
-      if (counter) {
-        counter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
-      }
-      currentIndex = index;
-    };
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle('active', slideIndex === index);
+      });
 
-    const startAutoplay = () => {
-      clearInterval(autoplayTimer);
-      autoplayTimer = setInterval(() => {
-        showSlide((currentIndex + 1) % slides.length);
-      }, 5000);
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle('active', dotIndex === index);
+      });
+
+      currentIndex = index;
     };
 
     dots.forEach((dot) => {
       dot.addEventListener('click', () => {
         showSlide(Number(dot.dataset.slide));
-        startAutoplay(); // reset timer on manual nav
       });
     });
 
-    // Pause on hover
-    const sliderTrack = document.querySelector('.slider-track');
-    if (sliderTrack) {
-      sliderTrack.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-      sliderTrack.addEventListener('mouseleave', startAutoplay);
-    }
-
-    showSlide(0);
-    startAutoplay();
+    setInterval(() => {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+    }, 4000);
   }
 
-  /* ── Scroll-reveal (single elements) ───────────────────── */
-  const revealObserver = new IntersectionObserver((entries) => {
+  const revealItems = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target); // fire once
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.15 });
 
-  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  revealItems.forEach((item) => observer.observe(item));
 
-  /* ── Scroll-reveal (staggered grids) ───────────────────── */
-  const staggerObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        staggerObserver.unobserve(entry.target);
+  // ── Service Image Carousel ───────────────────────────────
+  const scTrack = document.getElementById('scTrack');
+  const scPrev  = document.getElementById('scPrev');
+  const scNext  = document.getElementById('scNext');
+  const scDotsEl = document.getElementById('scDots');
+
+  if (scTrack && scPrev && scNext && scDotsEl) {
+    const scSlides = Array.from(scTrack.querySelectorAll('.sc-slide'));
+    let perPage = 3;
+    let scPage = 0;
+
+    const getPerPage = () => {
+      if (window.innerWidth <= 560) return 1;
+      if (window.innerWidth <= 860) return 2;
+      return 3;
+    };
+
+    const totalPages = () => Math.ceil(scSlides.length / perPage);
+
+    const buildDots = () => {
+      scDotsEl.innerHTML = '';
+      for (let i = 0; i < totalPages(); i++) {
+        const d = document.createElement('button');
+        d.className = 'sc-dot' + (i === scPage ? ' active' : '');
+        d.setAttribute('aria-label', `Go to page ${i + 1}`);
+        d.addEventListener('click', () => goTo(i));
+        scDotsEl.appendChild(d);
       }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    };
 
-  document.querySelectorAll('.reveal-stagger').forEach((el) => staggerObserver.observe(el));
+    const goTo = (page) => {
+      perPage = getPerPage();
+      const pages = totalPages();
+      scPage = Math.max(0, Math.min(page, pages - 1));
+      const offset = scPage * perPage;
+      scSlides.forEach((slide, i) => {
+        slide.style.display = (i >= offset && i < offset + perPage) ? '' : 'none';
+      });
+      scPrev.disabled = scPage === 0;
+      scNext.disabled = scPage >= pages - 1;
+      Array.from(scDotsEl.querySelectorAll('.sc-dot')).forEach((d, i) => {
+        d.classList.toggle('active', i === scPage);
+      });
+    };
 
-  /* ── Contact form: simulated submit ────────────────────── */
-  const submitBtn  = document.getElementById('submit-btn');
-  const formEl     = document.getElementById('contact-form');
-  const successEl  = document.getElementById('form-success');
+    const init = () => {
+      perPage = getPerPage();
+      buildDots();
+      goTo(0);
+    };
 
-  if (submitBtn && formEl && successEl) {
-    submitBtn.addEventListener('click', () => {
-      // Basic validation
-      const email = document.getElementById('email');
-      const msg   = document.getElementById('message');
-
-      if (email && !email.value.trim()) {
-        email.focus();
-        email.style.borderColor = 'rgba(201, 168, 76, 0.7)';
-        setTimeout(() => (email.style.borderColor = ''), 1500);
-        return;
-      }
-
-      if (msg && !msg.value.trim()) {
-        msg.focus();
-        msg.style.borderColor = 'rgba(201, 168, 76, 0.7)';
-        setTimeout(() => (msg.style.borderColor = ''), 1500);
-        return;
-      }
-
-      // Show success state
-      submitBtn.textContent = 'Sending…';
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        formEl.style.display = 'none';
-        successEl.style.display = 'block';
-      }, 900);
-    });
+    scPrev.addEventListener('click', () => goTo(scPage - 1));
+    scNext.addEventListener('click', () => goTo(scPage + 1));
+    window.addEventListener('resize', init);
+    init();
   }
-
 });
