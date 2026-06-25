@@ -716,3 +716,73 @@ footer {
     height: 2.4rem;
   }
 }
+
+@media (max-width: 480px) {
+  section {
+    padding: 4rem 1rem;
+  }
+
+  .navbar {
+    padding: 0.85rem 1rem;
+  }
+
+  .brand {
+    gap: 0.55rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+  }
+
+  .brand-mark {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .hero {
+    padding-top: 1.4rem;
+    gap: 1.25rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+  }
+
+  .slider {
+    min-height: 360px;
+  }
+
+  .slide {
+    padding: 1.25rem 1rem;
+  }
+
+  .slide h2 {
+    font-size: clamp(1.45rem, 6.5vw, 2rem);
+  }
+
+  .hero-card,
+  .panel,
+  .card,
+  .value-card {
+    padding: 1.2rem;
+  }
+
+  .footer-shell {
+    gap: 0.8rem;
+  }
+
+  .footer-links-group {
+    gap: 0.7rem 1rem;
+  }
+
+  .sc-body {
+    padding: 1rem 1rem 1.2rem;
+  }
+
+  .sc-controls {
+    margin-top: 1.3rem;
+  }
+}
