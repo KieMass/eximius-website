@@ -3,61 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Eximius</title>
+  <title>Services — Eximius IT Consulting</title>
+  <meta name="description" content="Eximius delivers application development, web development, IT consulting, database administration, and IT procurement services.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page-shell">
-    <nav class="navbar">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
       <a class="brand" href="index.html">
         <span class="brand-mark">E</span>
-        <span>Eximius</span>
+        <span>
+          <span class="brand-name">Eximius</span>
+          <span class="brand-tagline">Technology Consulting</span>
+        </span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <div class="nav-links">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link active" href="services.html">Services</a>
         <a class="nav-link" href="about.html">About</a>
         <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-cta" href="contact.html">Start a Conversation</a>
       </div>
     </nav>
 
     <main>
-      <section class="services reveal">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">Services</span>
-            <h2>Solutions tailored to your growth</h2>
-          </div>
-          <p>From strategy to delivery, every service is shaped around your needs.</p>
-        </div>
 
-        <div class="cards">
-          <article class="card reveal">
-            <h3>Business Consulting</h3>
-            <p>Strategic insight to guide your next move with clarity and confidence.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Digital Systems</h3>
-            <p>Reliable technology solutions built for performance, scale, and simplicity.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Ongoing Support</h3>
-            <p>Dependable assistance that keeps your business running at its best.</p>
-          </article>
+      <!-- PAGE HERO -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-layout">
+            <div class="reveal">
+              <span class="eyebrow">Our Services</span>
+              <h1>Capabilities designed around your technology goals.</h1>
+              <span class="gold-rule"></span>
+              <p>We offer a focused set of services — not a sprawling catalog. Every engagement is resourced by practitioners with direct, relevant experience, and structured to deliver measurable outcomes.</p>
+            </div>
+            <div class="reveal" style="display:flex; flex-direction:column; gap:1rem;">
+              <!--
+                DESIGN NOTE: Place a professional technology/office image here.
+                Suggested: A developer reviewing architecture diagrams or a team
+                working around a conference table with screens. 16:9, high contrast.
+              -->
+              <div style="background:var(--panel-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:2rem; display:grid; gap:0.75rem;">
+                <p style="font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-3); margin:0;">Services at a glance</p>
+                <ul class="check-list" style="margin:0;">
+                  <li><span class="check-icon">✓</span> Application &amp; Software Development</li>
+                  <li><span class="check-icon">✓</span> Website Design &amp; Development</li>
+                  <li><span class="check-icon">✓</span> IT Strategy &amp; Process Consulting</li>
+                  <li><span class="check-icon">✓</span> Database Architecture &amp; Administration</li>
+                  <li><span class="check-icon">✓</span> Technology Procurement &amp; Sourcing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      <!-- SERVICES DETAIL -->
+      <section class="services-section">
+        <div class="container">
+
+          <!-- Application Development -->
+          <div class="value-card reveal" style="margin-bottom:1.25rem;">
+            <div style="display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;">
+              <div>
+                <div class="service-icon icon-blue" style="margin-bottom:1rem;">⚙️</div>
+                <h2 class="section-title" style="font-size:1.5rem;">Application Development</h2>
+                <span class="gold-rule" style="margin:1rem 0;"></span>
+                <p style="font-size:0.875rem; color:var(--text-2); line-height:1.75;">
+                  Custom software built from first principles — not templated off-the-shelf solutions with your logo dropped in.
+                </p>
+              </div>
+              <div>
+                <p style="color:var(--text-2); font-size:0.9rem; line-height:1.8; margin-bottom:1.5rem;">
+                  We partner with you from requirements discovery through deployment. That means understanding your data flows, your user needs, your integration requirements, and your compliance context — before a single line of code is written.
+                </p>
+                <ul class="feature-list" style="max-width:480px;">
+                  <li>Enterprise web and desktop applications</li>
+                  <li>API design, integration, and microservices</li>
+                  <li>Legacy system modernization</li>
+                  <li>Cloud-native architecture (AWS, Azure, GCP)</li>
+                  <li>QA, testing, and CI/CD pipeline setup</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Website Development -->
+          <div class="value-card reveal" style="margin-bottom:1.25rem;">
+            <div style="display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;">
+              <div>
+                <div class="service-icon icon-gold" style="margin-bottom:1rem;">🌐</div>
+                <h2 class="section-title" style="font-size:1.5rem;">Website Development</h2>
+                <span class="gold-rule" style="margin:1rem 0;"></span>
+                <p style="font-size:0.875rem; color:var(--text-2); line-height:1.75;">
+                  A credible digital presence that performs as well as it looks.
+                </p>
+              </div>
+              <div>
+                <p style="color:var(--text-2); font-size:0.9rem; line-height:1.8; margin-bottom:1.5rem;">
+                  Your website is often the first point of evaluation for prospective clients. We design and build sites that communicate your expertise clearly, load fast, and provide a frictionless path from interest to contact — across every device and screen size.
+                </p>
+                <ul class="feature-list" style="max-width:480px;">
+                  <li>Corporate and brand websites</li>
+                  <li>CMS implementation (WordPress, headless)</li>
+                  <li>E-commerce and client portal development</li>
+                  <li>Performance optimization and Core Web Vitals</li>
+                  <li>ADA/WCAG accessibility compliance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- IT Consulting -->
+          <div class="value-card reveal" style="margin-bottom:1.25rem;">
+            <div style="display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;">
+              <div>
+                <div class="service-icon icon-blue" style="margin-bottom:1rem;">📊</div>
+                <h2 class="section-title" style="font-size:1.5rem;">IT &amp; Process Consulting</h2>
+                <span class="gold-rule" style="margin:1rem 0;"></span>
+                <p style="font-size:0.875rem; color:var(--text-2); line-height:1.75;">
+                  Strategic advisory with a practitioner's perspective.
+                </p>
+              </div>
+              <div>
+                <p style="color:var(--text-2); font-size:0.9rem; line-height:1.8; margin-bottom:1.5rem;">
+                  Many organizations invest in technology without a coherent strategy — accumulating systems that don't integrate, duplicate effort, and drive up operational cost. We assess your current state, identify high-value optimization opportunities, and design a practical roadmap for improvement.
+                </p>
+                <ul class="feature-list" style="max-width:480px;">
+                  <li>Technology landscape assessments</li>
+                  <li>Business process mapping &amp; re-engineering</li>
+                  <li>Digital transformation roadmaps</li>
+                  <li>IT governance and policy frameworks</li>
+                  <li>Vendor evaluation and contract advisory</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database Administration -->
+          <div class="value-card reveal" style="margin-bottom:1.25rem;">
+            <div style="display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;">
+              <div>
+                <div class="service-icon icon-gold" style="margin-bottom:1rem;">🗄️</div>
+                <h2 class="section-title" style="font-size:1.5rem;">Database Administration</h2>
+                <span class="gold-rule" style="margin:1rem 0;"></span>
+                <p style="font-size:0.875rem; color:var(--text-2); line-height:1.75;">
+                  Your data infrastructure, managed with precision.
+                </p>
+              </div>
+              <div>
+                <p style="color:var(--text-2); font-size:0.9rem; line-height:1.8; margin-bottom:1.5rem;">
+                  Poorly designed or under-maintained databases are a silent performance drain. We provide expert design, optimization, and ongoing administration for relational and non-relational systems, ensuring data integrity, availability, and security at every scale.
+                </p>
+                <ul class="feature-list" style="max-width:480px;">
+                  <li>Database design &amp; normalization</li>
+                  <li>Query optimization &amp; indexing strategy</li>
+                  <li>Backup, recovery, and high availability</li>
+                  <li>Data migration and ETL pipelines</li>
+                  <li>PostgreSQL, MySQL, SQL Server, MongoDB</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- IT Procurement -->
+          <div class="value-card reveal">
+            <div style="display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;">
+              <div>
+                <div class="service-icon icon-blue" style="margin-bottom:1rem;">🛒</div>
+                <h2 class="section-title" style="font-size:1.5rem;">IT Procurement</h2>
+                <span class="gold-rule" style="margin:1rem 0;"></span>
+                <p style="font-size:0.875rem; color:var(--text-2); line-height:1.75;">
+                  Strategic sourcing that reduces cost and mitigates risk.
+                </p>
+              </div>
+              <div>
+                <p style="color:var(--text-2); font-size:0.9rem; line-height:1.8; margin-bottom:1.5rem;">
+                  Technology purchasing decisions have long tails. We provide independent guidance on hardware, software, and cloud platform selection — helping you avoid vendor lock-in, negotiate favorable terms, and build a technology portfolio aligned to your actual needs.
+                </p>
+                <ul class="feature-list" style="max-width:480px;">
+                  <li>Hardware and infrastructure sourcing</li>
+                  <li>SaaS and license optimization</li>
+                  <li>Cloud cost management and right-sizing</li>
+                  <li>Vendor RFP development and evaluation</li>
+                  <li>Technology refresh planning</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="container">
+          <div class="form-panel reveal" style="text-align:center; padding:3.5rem 2.5rem;">
+            <span class="eyebrow" style="justify-content:center;">Next Steps</span>
+            <h2 class="section-title" style="margin:0 auto 1rem; max-width:560px;">
+              Not sure which service fits your situation?
+            </h2>
+            <p style="color:var(--text-2); font-size:0.95rem; margin-bottom:2rem; max-width:440px; margin-left:auto; margin-right:auto;">
+              Start with a conversation. We'll help you identify the right approach before any engagement is scoped.
+            </p>
+            <a class="btn btn-primary" href="contact.html">Talk to an Advisor</a>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <footer>
-      <p>© 2026 Eximius Services. Crafted for modern brands.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brand">
+              <span class="brand-mark">E</span>
+              <span class="brand-name">Eximius</span>
+            </div>
+            <p class="footer-desc">Enterprise-grade IT consulting and technology services for growth-focused organizations.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html">Application Development</a></li>
+              <li><a href="services.html">Website Development</a></li>
+              <li><a href="services.html">IT Consulting</a></li>
+              <li><a href="services.html">Database Administration</a></li>
+              <li><a href="services.html">IT Procurement</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:info@eximiusservices.com">info@eximiusservices.com</a></li>
+              <li><a href="tel:+15551234567">+1 (555) 123‑4567</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 Eximius Services LLC. All rights reserved.</p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
-  </div>
 
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

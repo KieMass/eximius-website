@@ -3,65 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Eximius</title>
+  <title>About — Eximius IT Consulting</title>
+  <meta name="description" content="Eximius is an IT consulting firm committed to practical strategy, disciplined delivery, and technology that creates lasting business value.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page-shell">
-    <nav class="navbar">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
       <a class="brand" href="index.html">
         <span class="brand-mark">E</span>
-        <span>Eximius</span>
+        <span>
+          <span class="brand-name">Eximius</span>
+          <span class="brand-tagline">Technology Consulting</span>
+        </span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <div class="nav-links">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link active" href="about.html">About</a>
         <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-cta" href="contact.html">Start a Conversation</a>
       </div>
     </nav>
 
     <main>
-      <section class="hero">
-        <div class="reveal">
-          <span class="eyebrow">About us</span>
-          <h2>We bring clarity, quality, and momentum to every project.</h2>
-          <p>Eximius partners with businesses that want thoughtful strategy and refined execution without the usual complexity.</p>
-        </div>
-        <div class="hero-card reveal">
-          <h3>Why clients choose us</h3>
-          <ul>
-            <li><span class="check">✓</span> Strategic thinking with practical delivery</li>
-            <li><span class="check">✓</span> Transparent collaboration and fast response times</li>
-            <li><span class="check">✓</span> A polished experience from start to finish</li>
-          </ul>
+
+      <!-- PAGE HERO -->
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-layout">
+            <div class="reveal">
+              <span class="eyebrow">About Eximius</span>
+              <h1>Precision, clarity, and outcomes — on every engagement.</h1>
+              <span class="gold-rule"></span>
+              <p>Eximius was built on a straightforward premise: organizations deserve technology partners who tell them what they need to hear, deliver what they commit to, and stay accountable for results long after the kickoff meeting.</p>
+            </div>
+
+            <!-- Right: Why choose us panel -->
+            <div class="reveal">
+              <div class="form-panel">
+                <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-3); margin-bottom:1.1rem;">Why clients choose Eximius</p>
+                <ul class="check-list">
+                  <li><span class="check-icon">✓</span> Honest, business-first technology recommendations</li>
+                  <li><span class="check-icon">✓</span> Transparent project scoping and milestone tracking</li>
+                  <li><span class="check-icon">✓</span> Senior-level practitioners on every engagement</li>
+                  <li><span class="check-icon">✓</span> Deliverables built for maintainability, not lock-in</li>
+                  <li><span class="check-icon">✓</span> Direct communication — no account management layers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="services reveal">
-        <div class="info-grid">
-          <article class="panel">
-            <h3>Our approach</h3>
-            <p>We combine deep listening with thoughtful technical execution to create experiences that feel modern and dependable.</p>
-          </article>
-          <article class="panel">
-            <h3>Our promise</h3>
-            <p>Every engagement is tailored to your goals, your audience, and the pace your business needs to grow.</p>
-          </article>
+      <!-- OUR APPROACH -->
+      <section>
+        <div class="container">
+          <div class="reveal">
+            <span class="eyebrow">How We Work</span>
+            <h2 class="section-title">Methodology that reduces friction, not just cost.</h2>
+          </div>
+
+          <div class="about-values">
+            <div class="value-card reveal">
+              <h3>We start by listening.</h3>
+              <p>
+                Before we propose a solution, we invest time understanding your actual constraints — budget, timeline, internal capacity, regulatory context, and organizational culture. The right technical answer is always shaped by these factors.
+              </p>
+            </div>
+
+            <div class="value-card reveal">
+              <h3>We design for long-term ownership.</h3>
+              <p>
+                Every system we build is documented, modular, and written to be maintained by your team or a future partner — not held together by institutional knowledge that walks out the door.
+              </p>
+            </div>
+
+            <div class="value-card reveal">
+              <h3>We communicate without jargon.</h3>
+              <p>
+                Decision-makers shouldn't need a technical translator. We present options in plain business terms, with trade-offs clearly articulated, so you can make informed decisions quickly.
+              </p>
+            </div>
+
+            <div class="value-card reveal">
+              <h3>We measure what matters.</h3>
+              <p>
+                Success isn't deployment — it's impact. We establish measurable outcomes at the start of every engagement and hold ourselves accountable to them throughout delivery.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="container">
+          <div class="form-panel reveal" style="text-align:center; padding:3.5rem 2.5rem;">
+            <span class="eyebrow" style="justify-content:center;">Work With Us</span>
+            <h2 class="section-title" style="margin:0 auto 1rem; max-width:480px;">
+              Ready to find out if we're a fit?
+            </h2>
+            <p style="color:var(--text-2); font-size:0.95rem; margin-bottom:2rem; max-width:400px; margin-left:auto; margin-right:auto;">
+              Reach out and we'll schedule a direct, no-pressure conversation about your technology priorities.
+            </p>
+            <a class="btn btn-primary" href="contact.html">Get in Touch</a>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <footer>
-      <p>© 2026 Eximius Services. Crafted for modern brands.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brand">
+              <span class="brand-mark">E</span>
+              <span class="brand-name">Eximius</span>
+            </div>
+            <p class="footer-desc">Enterprise-grade IT consulting and technology services for growth-focused organizations.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html">Application Development</a></li>
+              <li><a href="services.html">Website Development</a></li>
+              <li><a href="services.html">IT Consulting</a></li>
+              <li><a href="services.html">Database Administration</a></li>
+              <li><a href="services.html">IT Procurement</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:info@eximiusservices.com">info@eximiusservices.com</a></li>
+              <li><a href="tel:+15551234567">+1 (555) 123‑4567</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 Eximius Services LLC. All rights reserved.</p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
-  </div>
 
+  </div>
   <script src="script.js"></script>
 </body>
 </html>

@@ -3,52 +3,208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Eximius</title>
+  <title>Contact — Eximius IT Consulting</title>
+  <meta name="description" content="Get in touch with Eximius Services. Share your technology challenge and we'll respond with a clear, practical perspective.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page-shell">
-    <nav class="navbar">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
       <a class="brand" href="index.html">
         <span class="brand-mark">E</span>
-        <span>Eximius</span>
+        <span>
+          <span class="brand-name">Eximius</span>
+          <span class="brand-tagline">Technology Consulting</span>
+        </span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <div class="nav-links">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link" href="about.html">About</a>
         <a class="nav-link active" href="contact.html">Contact</a>
+        <a class="nav-cta" href="contact.html">Start a Conversation</a>
       </div>
     </nav>
 
     <main>
-      <section class="hero">
-        <div class="reveal">
-          <span class="eyebrow">Contact</span>
-          <h2>Let’s build something exceptional together.</h2>
-          <p>Share a few details and we’ll follow up with the right next step for your project.</p>
-        </div>
-        <div class="hero-card reveal">
-          <form>
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Tell us about your goals"></textarea>
-            <button class="btn btn-primary" type="submit">Send message</button>
-          </form>
+
+      <!-- PAGE HERO -->
+      <section class="page-hero" style="padding-bottom:2rem;">
+        <div class="container">
+          <div class="reveal">
+            <span class="eyebrow">Contact</span>
+            <h1>Let's talk about your technology goals.</h1>
+            <span class="gold-rule"></span>
+            <p style="max-width:560px;">
+              Share the details of your challenge and we'll respond within one business day with an honest, specific perspective on how to move forward — no sales deck, no runaround.
+            </p>
+          </div>
         </div>
       </section>
+
+      <!-- CONTACT BODY -->
+      <section style="padding-top:3rem;">
+        <div class="container">
+          <div class="contact-layout">
+
+            <!-- Left: Contact info -->
+            <div class="contact-info reveal">
+              <h2>Reach us directly.</h2>
+              <p>
+                We work with businesses at all stages — from early-stage companies shaping their first technology architecture to established organizations managing complex legacy environments.
+              </p>
+
+              <div class="contact-items">
+                <div class="contact-item">
+                  <span class="contact-item-icon">✉️</span>
+                  <div>
+                    <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.2rem;">Email</div>
+                    <a href="mailto:info@eximiusservices.com" style="color:var(--text); font-size:0.9rem;">info@eximiusservices.com</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-item-icon">📞</span>
+                  <div>
+                    <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.2rem;">Phone</div>
+                    <a href="tel:+15551234567" style="color:var(--text); font-size:0.9rem;">+1 (555) 123‑4567</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-item-icon">🕐</span>
+                  <div>
+                    <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.2rem;">Office Hours</div>
+                    <span style="color:var(--text); font-size:0.9rem;">Monday – Friday, 8am – 6pm ET</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-item-icon">⚡</span>
+                  <div>
+                    <div style="font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-3); margin-bottom:0.2rem;">Response Time</div>
+                    <span style="color:var(--text); font-size:0.9rem;">Within 1 business day</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Contact form -->
+            <div class="form-panel reveal">
+              <p style="font-size:0.75rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-3); margin-bottom:1.5rem;">Send us a message</p>
+
+              <div class="form-grid" id="contact-form" role="form" aria-label="Contact form">
+                <div class="form-row">
+                  <div>
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Jane" autocomplete="given-name">
+                  </div>
+                  <div>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Smith" autocomplete="family-name">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="email">Work Email</label>
+                  <input type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email">
+                </div>
+
+                <div>
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company" placeholder="Acme Corp" autocomplete="organization">
+                </div>
+
+                <div>
+                  <label for="service">Service Area</label>
+                  <select id="service" name="service">
+                    <option value="" disabled selected>Select a service area…</option>
+                    <option>Application Development</option>
+                    <option>Website Development</option>
+                    <option>IT &amp; Process Consulting</option>
+                    <option>Database Administration</option>
+                    <option>IT Procurement</option>
+                    <option>Not sure — I need guidance</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="message">How can we help?</label>
+                  <textarea id="message" name="message" placeholder="Describe your challenge, project, or question. The more context you provide, the more specific our response can be."></textarea>
+                </div>
+
+                <button class="btn btn-primary" type="button" id="submit-btn" style="width:100%; font-size:0.95rem;">
+                  Send Message
+                </button>
+
+                <p style="font-size:0.75rem; color:var(--text-3); text-align:center; margin-top:0.25rem;">
+                  We'll respond within one business day. No spam, ever.
+                </p>
+              </div>
+
+              <!-- Success state (hidden by default) -->
+              <div id="form-success" style="display:none; text-align:center; padding:2rem 0;">
+                <div style="font-size:2rem; margin-bottom:1rem;">✅</div>
+                <h3 style="color:#fff; margin-bottom:0.5rem;">Message received.</h3>
+                <p style="color:var(--text-2); font-size:0.9rem;">We'll be in touch within one business day.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <footer>
-      <p>© 2026 Eximius Services. Crafted for modern brands.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brand">
+              <span class="brand-mark">E</span>
+              <span class="brand-name">Eximius</span>
+            </div>
+            <p class="footer-desc">Enterprise-grade IT consulting and technology services for growth-focused organizations.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html">Application Development</a></li>
+              <li><a href="services.html">Website Development</a></li>
+              <li><a href="services.html">IT Consulting</a></li>
+              <li><a href="services.html">Database Administration</a></li>
+              <li><a href="services.html">IT Procurement</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="footer-links">
+              <li><a href="mailto:info@eximiusservices.com">info@eximiusservices.com</a></li>
+              <li><a href="tel:+15551234567">+1 (555) 123‑4567</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">© 2026 Eximius Services LLC. All rights reserved.</p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
-  </div>
 
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
