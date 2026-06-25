@@ -65,16 +65,15 @@ a {
   text-transform: uppercase;
 }
 
-.brand-logo {
-  display: block;
-  height: 204px;
-  width: auto;
-  max-width: 900px;
-  object-fit: contain;
-}
-
 .brand-mark {
-  display: none;
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: var(--bg);
+  font-weight: 900;
 }
 
 .nav-links {
